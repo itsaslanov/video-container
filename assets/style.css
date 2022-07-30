@@ -31,7 +31,11 @@ body {
 
 .video-group {
   /* for background color */
-  background-color: #000;
+  position: relative;
+  background-color: rgb(66, 66, 66);
+  background-image: url('../assets/Original-logo-white.png');
+  overflow: hidden;
+  background-size: 140px;
 }
 
 .grid {
