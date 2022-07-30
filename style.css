@@ -1,0 +1,85 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+  color: #333;
+}
+
+.navbar {
+  background-color: rgb(255, 228, 78);
+}
+
+.container {
+  max-width: 1500px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.video-group {
+  /* for background color */
+  background-color: #000;
+}
+
+.grid {
+  margin: 0 auto;
+  height: 90vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  aspect-ratio: 16 / 9;
+}
+
+.video-card video {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.logo img {
+  max-width: 130px;
+  width: 100%;
+}
+
+@media only screen and (max-width: 1480px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    aspect-ratio: initial;
+    height: 100%;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .flex {
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .logo img {
+    max-width: 120px !important;
+    margin-bottom: 5px;
+  }
+} 
+
+
+@media only screen and (max-width: 576px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+
+}
