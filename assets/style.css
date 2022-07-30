@@ -59,6 +59,10 @@ body {
   width: 100%;
 }
 
+.text-hero p {
+  font-weight: 600;
+}
+
 @media only screen and (max-width: 1480px) {
   .grid {
     grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
@@ -71,11 +75,12 @@ body {
   .flex {
     flex-direction: column;
     height: 100%;
+    padding: 20px;
   }
 
   .logo img {
     max-width: 120px !important;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
   }
 } 
 
