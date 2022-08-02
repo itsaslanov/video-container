@@ -18,6 +18,11 @@
   <meta name="msapplication-config" content="/favicon/browserconfig.xml">
   <meta name="theme-color" content="#ffffff">
 
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400&600display=swap" rel="stylesheet">
+
   <title>Imtihonlar onlayn jonli translyatsiyasi</title>
 
   <!-- Stylesheet -->
@@ -33,54 +38,73 @@
       </a>
       <div class="text-hero">
         <p>Alohida iqtidor talab etiladigan bakalavriyat ta'lim yo'nalishlariga kirish uchun kasbiy (ijodiy) imtihon
-          jarayonlari </p>
+          jarayonlari</p>
       </div>
     </div>
   </nav>
   <!-- container -->
-  <div class="video-group">
-    <div class="grid">
-      <div class="video-card">
-        <div class="player" id="player1" data-title="Stadion yugurish" data-file="https://streams.exams.live.qarshidu.uz/stream/472f6ab2-7ee7-4066-a206-aa7324788704/index.m3u8"></div>
-      </div>
-      <div class="video-card">
-        <div class="player" id="player2" data-file="https://streams.exams.live.qarshidu.uz/stream/8104687a-ecae-42fe-9923-c24c8309d733/index.m3u8"></div>
-      </div>
-      <div class="video-card">
-        <div class="player" id="player3" data-file="https://streams.exams.live.qarshidu.uz/stream/d3545ac8-d033-4e46-a1ef-8042a53aa8d6/index.m3u8"></div>
-      </div>
-      <div class="video-card">
-        <div class="player" id="player4" data-file="https://streams.exams.live.qarshidu.uz/stream/880028b6-43c1-4dff-80bf-286af7c48056/index.m3u8"></div>
-      </div>
-      <div class="video-card">
-        <div class="player" id="player5" data-file="https://streams.exams.live.qarshidu.uz/stream/5a84026f-7245-491d-b470-770b862ae400/index.m3u8"></div>
-      </div>
-      <div class="video-card">
-        <div class="player" id="player6" data-file="https://streams.exams.live.qarshidu.uz/stream/445fae0b-0c75-407b-bc30-517ee1f81341/index.m3u8"></div>
-      </div>
-      <div class="video-card">
-        <div class="player" id="player7" data-file="https://streams.exams.live.qarshidu.uz/stream/573e23b5-c43c-439c-94bd-53b8d4f735c2/index.m3u8"></div>
-      </div>
-      <div class="video-card">
-        <div class="player" id="player8" data-file="https://streams.exams.live.qarshidu.uz/stream/2e1f6e69-c81e-40dc-b8ba-8dc159af3054/index.m3u8"></div>
-      </div>
-      <div class="video-card">
-        <div class="player" id="player9" data-file="https://streams.exams.live.qarshidu.uz/stream/a83d6b79-41ce-435b-b9bd-e47c7f5a6b8a/index.m3u8"></div>
+  <div class="container p-y-0">
+    <div class="video-group">
+      <div class="grid">
+        <div class="video-card big-video-card">
+          <div class="player" id="player"></div>
+        </div>
       </div>
     </div>
   </div>
-
   <!-- Initiate the player and auto-play with audio muted -->
   <script src="https://cdn.jwplayer.com/libraries/nx3azxYB.js"></script>
+  <script src="main.js"></script>
   <script>
-    document.querySelectorAll(".player").forEach((el) => {
-      jwplayer(el.id).setup({
-        file: el.dataset.file,
-        title: el.dataset.title,
-        image: "/img/video-static-background.jpg",
-        stretching: "fill",
-        aspectratio: "16:9",
-      });
+    const PLAYLIST = [
+      {
+        title: "Stadion",
+        file: "https://streams.exams.live.qarshidu.uz/stream/stadium_south_west/index.m3u8",
+        image: "https://exams.live.qarshidu.uz/img/video-static-background.jpg"
+      },
+      {
+        title: "Stadion",
+        file: "https://streams.exams.live.qarshidu.uz/stream/stadium_east/index.m3u8",
+        image: "https://exams.live.qarshidu.uz/img/video-static-background.jpg"
+      },
+      {
+        title: "Stadion",
+        file: "https://streams.exams.live.qarshidu.uz/stream/stadium_north_east/index.m3u8",
+        image: "https://exams.live.qarshidu.uz/img/video-static-background.jpg"
+      },
+      {
+        title: "Stadion",
+        file: "https://streams.exams.live.qarshidu.uz/stream/stadium_south_east/index.m3u8",
+        image: "https://exams.live.qarshidu.uz/img/video-static-background.jpg"
+      },
+      {
+        title: "Kurash",
+        file: "https://streams.exams.live.qarshidu.uz/stream/wrestling_room/index.m3u8",
+        image: "https://exams.live.qarshidu.uz/img/video-static-background.jpg"
+      },
+      {
+        title: "Sportzal",
+        file: "https://streams.exams.live.qarshidu.uz/stream/volleyball_room/index.m3u8",
+        image: "https://exams.live.qarshidu.uz/img/video-static-background.jpg"
+      },
+      {
+        title: "Libos dizayni",
+        file: "https://streams.exams.live.qarshidu.uz/stream/sculpturing_room_1/index.m3u8",
+        image: "https://exams.live.qarshidu.uz/img/video-static-background.jpg"
+      },
+      {
+        title: "Libos dizayni",
+        file: "https://streams.exams.live.qarshidu.uz/stream/drawing_room_1/index.m3u8",
+        image: "https://exams.live.qarshidu.uz/img/video-static-background.jpg"
+      },
+      {
+        title: "Libos dizayni",
+        file: "https://streams.exams.live.qarshidu.uz/stream/drawing_room_2/index.m3u8",
+        image: "https://exams.live.qarshidu.uz/img/video-static-background.jpg"
+      },
+    ];
+    jwplayer("player").setup({
+      playlist: PLAYLIST
     });
   </script>
 </body>

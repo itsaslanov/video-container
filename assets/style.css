@@ -7,24 +7,25 @@
 }
 
 body {
-  font-family: sans-serif;
   font-size: 16px;
   color: #333;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 .navbar {
-  background-color: rgb(255, 228, 78);
+  background-color: #dddddd ;
 }
 
 .container {
-  max-width: 1500px;
+  padding: 10px 50px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .flex {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 10vh;
   margin: 0 auto;
   width: 100%;
 }
@@ -32,18 +33,20 @@ body {
 .video-group {
   /* for background color */
   position: relative;
-  background-color: rgb(66, 66, 66);
-  background-image: url('../assets/Original-logo-white.png');
   overflow: hidden;
   background-size: 130px;
 }
 
 .grid {
   margin: 0 auto;
-  height: 90vh;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  aspect-ratio: 16 / 9;
+  grid-auto-rows: auto;
+}
+
+.big-video-card {
+  grid-column-start: 1;
+  grid-column-end: 4;
 }
 
 .video-card video {
@@ -55,20 +58,13 @@ body {
 }
 
 .logo img {
-  max-width: 130px;
+  max-width: 120px;
   width: 100%;
 }
 
 .text-hero p {
-  font-weight: 600;
-}
-
-@media only screen and (max-width: 1480px) {
-  .grid {
-    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
-    aspect-ratio: initial;
-    height: 100%;
-  }
+  font-weight: 400;
+  font-size: 18px;
 }
 
 @media only screen and (max-width: 992px) {
@@ -79,8 +75,22 @@ body {
   }
 
   .logo img {
-    max-width: 120px !important;
+    max-width: 100px !important;
     margin-bottom: 20px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    aspect-ratio: initial;
+  }
+
+  .big-video-card {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .container {
+    padding: 15px 20px;
   }
 } 
 
@@ -89,6 +99,23 @@ body {
   .grid {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
+}
 
+.p-y-0 {
+  padding-top: 20px;
+  padding-bottom: 0;
+}
 
+.w-full {
+  width: 100%;
+  display: block;
+}
+
+.jw-shelf-widget .jw-related-shelf-contents {
+  padding: 20px 0px !important;
+  position: relative;
+}
+
+.jw-aspect {
+  
 }
